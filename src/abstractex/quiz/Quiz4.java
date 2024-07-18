@@ -7,25 +7,34 @@ public class Quiz4 {
 	public static void main(String[] args) {
 
 		ArrayList<Car2> list = new ArrayList<>();
-		
+
 		list.add(new Bus1());
 		list.add(new AutoCar1());
-		
-		for(Car2 car2 : list) {
-			
+
+		for (Car2 car2 : list) {
+			car2.run();
+			car2.refuel();
+
+			if (car2 instanceof Bus1) {
+				Bus1 bus1 = (Bus1) car2;
+				bus1.takePassenger();
+			} else if (car2 instanceof AutoCar1) {
+				AutoCar1 autoCar1 = (AutoCar1) car2;
+				autoCar1.load();
+			}
 		}
-		
+
 	}
 
 }
 
-
 //차 클래스
 abstract class Car2 {
-	
+
 	public abstract void run();
+
 	public abstract void refuel();
-	
+
 }
 
 //버스 클래스
@@ -40,11 +49,11 @@ class Bus1 extends Car2 {
 	public void refuel() {
 		System.out.println("천연 가스를 충전 합니다.");
 	}
-	
+
 	public void takePassenger() {
 		System.out.println("승객을 버스에 태웁니다.");
 	}
-	
+
 }
 
 //자동차 클래스
@@ -59,9 +68,9 @@ class AutoCar1 extends Car2 {
 	public void refuel() {
 		System.out.println("휘발유를 주유합니다.");
 	}
-	
+
 	public void load() {
 		System.out.println("짐을 싣습니다.");
 	}
-	
+
 }

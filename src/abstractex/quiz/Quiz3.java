@@ -4,7 +4,15 @@ public class Quiz3 {
 
 	public static void main(String[] args) {
 
+		Human1 human1 = new Human1();
+		human1.sleep();
+		human1.move();
+		human1.readBook();
 		
+		Tiger1 tiger1 = new Tiger1();
+		tiger1.sleep();
+		tiger1.move();
+		tiger1.hunting();
 		
 	}
 
